@@ -1,0 +1,66 @@
+{
+    "CRS.FileNamePattern": "<ObjectNameShort>.<ObjectTypeShortPascalCase>.al",
+    "CRS.FileNamePatternExtensions": "<ObjectNameShort>.<ObjectTypeShortPascalCase>.al",
+    "CRS.FileNamePatternPageCustomizations": "<ObjectNameShort>.<ObjectTypeShortPascalCase>.al",
+    "CRS.OnSaveAlFileAction": "Rename",
+    "CRS.RenameWithGit": false,
+    "CRS.ObjectNamePrefix": " ", // TODO Add your prefix
+    "CRS.RemovePrefixFromFilename": true,
+    "editor.quickSuggestionsDelay": 1,
+    "editor.suggestSelection": "first",
+    "al-test-runner.publishBeforeTest": "Publish",
+    "editor.quickSuggestions": {
+        "other": true,
+        "comments": false,
+        "strings": false
+    },
+    "editor.tabCompletion": "onlySnippets",
+    "editor.codeLens": true,
+    "al.backgroundCodeAnalysis": true,
+    "al.enableCodeActions": true,
+    "al.enableCodeAnalysis": true,
+    "al.codeAnalyzers": [ //TODO Enable AppSourceCop or PerTenantExtensionCop
+        "${CodeCop}",
+        "${UICop}"
+    ],
+    "al.ruleSetPath": "TSR.ruleset.json",
+    "alVarHelper.ignoreALPrefix": "TSR;TSRM;TSRP;TSRT;TSRS", // TODO Add your prefixes
+    "xliffSync.clearTranslationAfterSourceTextChange": true,
+    "xliffSync.baseFile": ".g.xlf", // TODO Setup your translation file
+    "alOutline.completionProviders": [
+        "VariableNamesWithType"
+    ],
+    "editor.codeActionsOnSave": {
+        "source.fixAll": "explicit"
+    },
+    "alOutline.codeActionsOnSave": [
+        "SortTableFields",
+        "SortVariables",
+        "SortProperties",
+        "SortCustomizations"
+    ],
+    "alOutline.codeCleanupActions": [
+        "AddApplicationAreas",
+        "AddMissingParentheses",
+        "AddObjectCaptions",
+        "AddPageFieldCaptions",
+        "AddTableFieldCaptions",
+        "AddToolTips",
+        "FixIdentifiersCase",
+        "FixKeywordsCase",
+        "FormatDocument",
+        "MakeFlowFieldsReadOnly",
+        "RemoveBeginEnd",
+        "RemoveEmptyLines",
+        "RemoveEmptySections",
+        "RemoveEmptyTriggers",
+        "RemoveUnusedVariables",
+        "RemoveWithStatements",
+        "SortCustomizations",
+        "SortPermissions",
+        "SortProperties",
+        "SortTableFields",
+        "SortVariables",
+        "TrimTrailingWhitespace"
+    ]
+}

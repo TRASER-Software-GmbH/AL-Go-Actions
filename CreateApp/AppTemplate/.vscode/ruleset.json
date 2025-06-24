@@ -1,0 +1,16 @@
+{
+  "name": "TRASER DMS Business Central",
+  "description": "These rules must be respected by all AL developers written within the company",
+  "rules": [
+    {
+      "id": "AL0603",
+      "action": "Hidden",
+      "justification": "Enum to Option, Ignored for now, waiting for next Microsoft Release to see how they fixed it"
+    },
+    {
+      "id": "AA0072",
+      "action": "None",
+      "justification": "This rule states that parameters should be suffixed by type. I don't agree"
+    }
+  ]
+}

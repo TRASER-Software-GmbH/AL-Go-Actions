@@ -1,31 +1,38 @@
 {
-  "id": "364f68de-c52e-43d5-a70b-10a278d8a086",
-  "name": "SampleALProject",
-  "publisher": "Default publisher",
-  "version": "1.0.0.0",
-  "brief": "",
-  "description": "",
-  "privacyStatement": "",
-  "EULA": "",
-  "help": "",
-  "url": "",
-  "logo": "",
-  "dependencies": [],
-  "screenshots": [],
-  "platform": "1.0.0.0",
-  "application": "22.0.0.0",
+  "id": "", //TODO Generate in Powershell with New-Guid
+  "name": "", //TODO
+  "publisher": "TRASER Software GmbH",
+  "version": "1.0.0.0", // TODO version schema is BCMajorBCMinor.ReleaseHotfix.Build.Revision e.g. 1801.220200.0.0 Build and Revision are auto filled by pipelines
+  "brief": "", //TODO
+  "description": "", //TODO
+  "privacyStatement": "https://traser-software.de/en/datenschutzerklaerung/",
+  "EULA": "https://traser-software.de/en/general-terms-conditions/",
+  "help": "https://docs.traser-software.de/{0}/dms/business-central/",
+  "logo": "png_core_logo_icon.png",
+  "url": "http://www.traser-software.de/",
+  "platform": "", //TODO
+  "application": "", //TODO
+  "dependencies": [], //TODO if no dependencies then delete node
   "idRanges": [
     {
-      "from": 50100,
-      "to": 50149
+      "from": , //TODO 70000 for PTE for product range ask LKN
+      "to":
     }
   ],
-  "features": [
-    "NoImplicitWith"
+  "supportedLocales": [
+    "de-DE",
+    "en-US"
   ],
+  "features": [
+    "TranslationFile"
+  ],
+  "contextSensitiveHelpUrl": "https://docs.traser-software.de/{0}/dms/business-central/",
+  "showMyCode": true, // TODO show my code OR resourceExposurePolicy not both not neither
   "resourceExposurePolicy": {
     "allowDebugging": true,
     "allowDownloadingSource": false,
     "includeSourceInSymbolFile": false
-  }
+  },
+  "runtime": "", // TODO Maximum Version extension is compatible to
+  "target": "" //TODO
 }
