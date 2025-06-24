@@ -1,5 +1,5 @@
 {
-  "id": "", //TODO Generate in Powershell with New-Guid
+  "id": "",
   "name": "", //TODO
   "publisher": "TRASER Software GmbH",
   "version": "1.0.0.0", // TODO version schema is BCMajorBCMinor.ReleaseHotfix.Build.Revision e.g. 1801.220200.0.0 Build and Revision are auto filled by pipelines
@@ -34,5 +34,5 @@
     "includeSourceInSymbolFile": false
   },
   "runtime": "", // TODO Maximum Version extension is compatible to
-  "target": "" //TODO
+  "target": "Cloud"
 }
