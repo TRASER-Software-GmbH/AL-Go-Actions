@@ -12,6 +12,22 @@ inputs:
     description: The id of the pull request
     required: false
     default: ${{ github.event.pull_request.number }}
+  containerUsername:
+    description: The username for the container
+    required: false
+    default: 'traser'
+  containerPassword:
+    description: The password for the container
+    required: false
+    default: 'Traser2025!'
+  bcLicense:
+    description: The Business Central license to use in the container
+    required: false
+    default: ${{ vars.BC_LICENSE }}
+  bcVersion:
+    description: The Business Central version to use in the container
+    required: false
+    default: ${{ vars.BC_VERSION }}
 runs:
   using: composite
   steps:
@@ -20,10 +36,10 @@ runs:
       id: createprcontainer
       env:
         _containerName: pr${{ inputs.pullRequestNumber }}
-        _containerUsername: ${{ vars.CONTAINER_USERNAME }}
-        _containerPassword: ${{ vars.CONTAINER_PASSWORD }}
-        _bcLicense: ${{ vars.BC_LICENSE }}
-        _bcVersion: ${{ vars.BC_VERSION}}
+        _containerUsername: ${{ inputs.containerUsername }}
+        _containerPassword: ${{ inputs.containerPassword }}
+        _bcLicense: ${{ inputs.bcLicense }}
+        _bcVersion: ${{ inputs.bcVersion }}
         _sourcesWorkspace: ${{ github.workspace }}
         _nugetFeedsToken: ${{ secrets.NUGET_FEEDS_TOKEN }}
       run: |
