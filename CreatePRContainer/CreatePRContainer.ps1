@@ -12,7 +12,8 @@ Param(
     [Parameter(HelpMessage = "Sources Workspace", Mandatory = $true)]
     [string] $SourcesWorkspace,
     [Parameter(HelpMessage = "NuGet Feeds Token", Mandatory = $true)]
-    [string] $NugetFeedsToken
+    [string] $NugetFeedsToken = $secrets.NUGET_FEEDS_TOKEN
+    
 )   
 
 $containerCredential = New-Object System.Management.Automation.PSCredential -ArgumentList $ContainerUsername, $ContainerPassword

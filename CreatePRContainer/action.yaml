@@ -22,12 +22,10 @@ inputs:
     default: 'Traser2025!'
   bcLicense:
     description: The Business Central license to use in the container
-    required: false
-    default: ${{ vars.BC_LICENSE }}
+    required: true
   bcVersion:
     description: The Business Central version to use in the container
-    required: false
-    default: ${{ vars.BC_VERSION }}
+    required: true
 runs:
   using: composite
   steps:
