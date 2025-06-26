@@ -34,6 +34,7 @@ runs:
   steps:
     - name: Create PR Container
       shell: ${{ inputs.shell }}
+      runs-on: ${{ inputs.runs-on }}
       id: createprcontainer
       env:
         _containerName: pr${{ inputs.pullRequestNumber }}
@@ -56,6 +57,7 @@ runs:
     - name: Cleanup on Failure
       if: failure()
       shell: ${{ inputs.shell }}
+      runs-on: ${{ inputs.runs-on }}
       env:
         _containername: pr${{  inputs.pullRequestNumber }}
       run: |
