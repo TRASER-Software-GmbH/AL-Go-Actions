@@ -26,6 +26,9 @@ inputs:
   bcVersion:
     description: The Business Central version to use in the container
     required: true
+  nugetFeedsToken:
+    description: The token for the NuGet feeds
+    required: true
 runs:
   using: composite
   steps:
@@ -39,7 +42,7 @@ runs:
         _bcLicense: ${{ inputs.bcLicense }}
         _bcVersion: ${{ inputs.bcVersion }}
         _sourcesWorkspace: ${{ github.workspace }}
-        _nugetFeedsToken: ${{ secrets.NUGET_FEEDS_TOKEN }}
+        _nugetFeedsToken: ${{ inputs.nugetFeedsToken }}
       run: |
         ${{ github.action_path }}/../Invoke-AlGoAction.ps1 -ActionName "CreatePRContainer" -Action {
           ${{ github.action_path }}/CreatePRContainer.ps1 -containerName $ENV:_containerName `
