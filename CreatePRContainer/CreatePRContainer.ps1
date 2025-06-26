@@ -13,7 +13,8 @@ Param(
     [string] $SourcesWorkspace
 )   
 
-$containerCredential = New-Object System.Management.Automation.PSCredential -ArgumentList $ContainerUsername, ConvertTo-SecureString -String "$ContainerPassword" -AsPlainText
+$ContainerPassword = ConvertTo-SecureString "$ContainerPassword" -AsPlainText -Force
+$containerCredential = New-Object System.Management.Automation.PSCredential -ArgumentList $ContainerUsername, $ContainerPassword
 Set-ALAppVersion -root $SourcesWorkspace -Build 214748364
 
 if (Test-BcContainer $ContainerName) {
