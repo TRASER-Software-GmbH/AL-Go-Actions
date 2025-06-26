@@ -4,7 +4,7 @@ Param(
     [Parameter(HelpMessage = "Container Username", Mandatory = $false)]
     [string] $ContainerUsername = "traser",
     [Parameter(HelpMessage = "Container Password", Mandatory = $false)]
-    [securestring] $ContainerPassword = (ConvertTo-SecureString "Traser2025!" -AsPlainText -Force),
+    [string] $ContainerPassword = "Traser2025!" ,
     [Parameter(HelpMessage = "BC License", Mandatory = $true)]
     [string] $BcLicense,
     [Parameter(HelpMessage = "BC Version", Mandatory = $true)]
