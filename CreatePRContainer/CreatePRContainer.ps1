@@ -4,7 +4,7 @@ Param(
     [Parameter(HelpMessage = "Container Username", Mandatory = $false)]
     [string] $ContainerUsername = "traser",
     [Parameter(HelpMessage = "Container Password", Mandatory = $false)]
-    [string] $ContainerPassword = "Traser2025!" ,
+    [string] $ContainerPassword = "Traser2025!",
     [Parameter(HelpMessage = "BC License", Mandatory = $true)]
     [string] $BcLicense,
     [Parameter(HelpMessage = "BC Version", Mandatory = $true)]
@@ -13,8 +13,8 @@ Param(
     [string] $SourcesWorkspace
 )   
 
-$ContainerPassword = ConvertTo-SecureString "$ContainerPassword" -AsPlainText -Force
-$containerCredential = New-Object System.Management.Automation.PSCredential -ArgumentList $ContainerUsername, $ContainerPassword
+$securePassword = ConvertTo-SecureString $ContainerPassword -AsPlainText -Force
+$containerCredential = New-Object System.Management.Automation.PSCredential ($ContainerUsername, $securePassword)
 Set-ALAppVersion -root $SourcesWorkspace -Build 214748364
 
 if (Test-BcContainer $ContainerName) {
