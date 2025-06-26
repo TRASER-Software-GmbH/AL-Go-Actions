@@ -49,6 +49,7 @@ runs:
             -containerUsername $ENV:_containerUsername `
             -containerPassword $ENV:_containerPassword `
             -bcLicense $ENV:_bcLicense `
+            -bcVersion $ENV:_bcVersion `
             -sourcesWorkspace $ENV:_sourcesWorkspace 
         }
 
