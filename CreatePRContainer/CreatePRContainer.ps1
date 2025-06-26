@@ -10,10 +10,7 @@ Param(
     [Parameter(HelpMessage = "BC Version", Mandatory = $true)]
     [string] $BcVersion,
     [Parameter(HelpMessage = "Sources Workspace", Mandatory = $true)]
-    [string] $SourcesWorkspace,
-    [Parameter(HelpMessage = "NuGet Feeds Token", Mandatory = $true)]
-    [string] $NugetFeedsToken = $secrets.NUGET_FEEDS_TOKEN
-    
+    [string] $SourcesWorkspace
 )   
 
 $containerCredential = New-Object System.Management.Automation.PSCredential -ArgumentList $ContainerUsername, $ContainerPassword
@@ -43,7 +40,7 @@ $parameters = @{
         runContainerUpgrade  = $true
         includeRelatedApps   = $true
         useNuGet             = $true
-        nuGetToken           = "$NugetFeedsToken"
+        nuGetToken           = $env:NugetFeedsToken
         artifactUrl          = $artifactUrl
 }  
 Deploy-ToALContainer @parameters
