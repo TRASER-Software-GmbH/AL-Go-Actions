@@ -19,7 +19,7 @@ runs:
       shell: ${{ inputs.shell }}
       id: createprcontainer
       env:
-        _containerName: pr${{  inputs.pullRequestNumber }}
+        _containerName: pr${{ inputs.pullRequestNumber }}
         _containerUsername: ${{ vars.CONTAINER_USERNAME }}
         _containerPassword: ${{ vars.CONTAINER_PASSWORD }}
         _bcLicense: ${{ vars.BC_LICENSE }}
