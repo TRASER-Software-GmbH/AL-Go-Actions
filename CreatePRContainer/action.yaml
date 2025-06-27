@@ -1,0 +1,54 @@
+name: Create PR Container
+author: Traser Software GmbH
+inputs:
+  shell:
+    description: Shell in which you want to run the action (powershell or pwsh)
+    required: false
+    default: powershell
+  runs-on:
+    description: The type of runner to run the job on
+    required: true
+  pullRequestNumber:
+    description: The id of the pull request
+    required: false
+    default: ${{ github.event.pull_request.number }}
+  containerUsername:
+    description: The username for the container
+    required: false
+    default: 'traser'
+  containerPassword:
+    description: The password for the container
+    required: false
+    default: 'Traser2025!'
+  bcLicense:
+    description: The Business Central license to use in the container
+    required: true
+  bcVersion:
+    description: The Business Central version to use in the container
+    required: true
+  nugetFeedsToken:
+    description: The token for the NuGet feeds
+    required: true
+runs:
+  using: composite
+  steps:
+    - name: Create PR Container
+      shell: ${{ inputs.shell }}
+      id: createprcontainer
+      env:
+        _containerName: pr${{ inputs.pullRequestNumber }}
+        _containerUsername: ${{ inputs.containerUsername }}
+        _containerPassword: ${{ inputs.containerPassword }}
+        _bcLicense: ${{ inputs.bcLicense }}
+        _bcVersion: ${{ inputs.bcVersion }}
+        _sourcesWorkspace: ${{ github.workspace }}
+        _nugetFeedsToken: ${{ inputs.nugetFeedsToken }}
+      run: |
+        ${{ github.action_path }}/../Invoke-AlGoAction.ps1 -ActionName "CreatePRContainer" -Action {
+          ${{ github.action_path }}/CreatePRContainer.ps1 -containerName $ENV:_containerName `
+            -containerUsername $ENV:_containerUsername `
+            -containerPassword $ENV:_containerPassword `
+            -bcLicense $ENV:_bcLicense `
+            -bcVersion $ENV:_bcVersion `
+            -sourcesWorkspace $ENV:_sourcesWorkspace 
+        }

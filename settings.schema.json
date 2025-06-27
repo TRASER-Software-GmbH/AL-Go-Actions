@@ -415,6 +415,22 @@
             "pattern": "^(|powershell|pwsh)$",
             "description": "The shell to be used. See https://aka.ms/ALGoSettings#shell"
         },
+        "containerUsername": {
+            "type": "string",
+            "description": "The username for the container. See https://aka.ms/ALGoSettings#containerusername"
+        },
+        "containerPassword": {
+            "type": "string",
+            "description": "The password for the container. See https://aka.ms/ALGoSettings#containerpassword"
+        },
+        "bcLicense": {
+            "type": "string",
+            "description": "The path to the Business Central license file. See https://aka.ms/ALGoSettings#bclicense"
+        },
+        "bcVersion": {
+            "type": "string",
+            "description": "The version of the Business Central container to be used. See https://aka.ms/ALGoSettings#bcversion"
+        },
         "githubRunner": {
             "type": "string",
             "description": "The GitHub runner to be used. See https://aka.ms/ALGoSettings#githubrunner"

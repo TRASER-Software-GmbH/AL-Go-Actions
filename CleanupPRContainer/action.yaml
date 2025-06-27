@@ -1,0 +1,25 @@
+name: Cleanup PR Container
+author: Traser Software GmbH
+inputs:
+  shell:
+    description: Shell in which you want to run the action (powershell or pwsh)
+    required: false
+    default: powershell
+  pullRequestNumber:
+    description: The id of the pull request
+    required: false
+    default: ${{ github.event.pull_request.number }}
+
+runs:
+  using: composite
+  steps:
+    - name: Cleanup PR Container
+      shell: ${{ inputs.shell }}
+      env:
+        _containername: pr${{ inputs.pullRequestNumber }}
+      run: |
+        ${{ github.action_path }}/../Invoke-AlGoAction.ps1 -ActionName "CleanupBCContainer" -Action {
+          if (Test-BcContainer $ENV:_containername) {
+            Remove-BCContainer -containerName $ENV:_containername
+          }
+        }
