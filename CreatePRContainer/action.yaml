@@ -30,7 +30,6 @@ inputs:
     description: The token for the NuGet feeds
     required: true
 runs:
-  using: composite
   steps:
     - name: Create PR Container
       shell: ${{ inputs.shell }}
