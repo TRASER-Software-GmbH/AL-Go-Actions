@@ -25,7 +25,7 @@ if (Test-BcContainer $ContainerName) {
 }
 
 if ('' -ne $BcVersion) {
-        $artifactUrl = (Get-ALArtifactUrl -root $SourcesWorkspace -version "$BcVersion" )
+        $artifactUrl = (Get-ALArtifactUrl -root $SourcesWorkspace -version "$BcVersion" -type "Sandbox")
 } else {
         $artifactUrl = ""
 }
