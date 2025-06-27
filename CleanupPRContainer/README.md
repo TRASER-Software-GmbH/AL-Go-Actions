@@ -1,11 +1,11 @@
-# Cleanup BC Container Action
+# Cleanup PR Container Action
 
 This action is designed to clean up Business Central containers, particularly useful in cleanup scenarios or after failures.
 
 ## Example
 
 ```yaml
-- name: Cleanup BC Container
+- name: Cleanup PR Container
   uses: ./CleanupBCContainer
   if: failure()
   with:

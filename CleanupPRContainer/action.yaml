@@ -1,4 +1,4 @@
-name: Cleanup BC Container
+name: Cleanup PR Container
 author: Traser Software GmbH
 inputs:
   shell:
@@ -13,7 +13,7 @@ inputs:
 runs:
   using: composite
   steps:
-    - name: Cleanup BC Container
+    - name: Cleanup PR Container
       shell: ${{ inputs.shell }}
       env:
         _containername: pr${{ inputs.pullRequestNumber }}
