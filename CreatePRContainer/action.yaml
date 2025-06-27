@@ -52,13 +52,3 @@ runs:
             -bcVersion $ENV:_bcVersion `
             -sourcesWorkspace $ENV:_sourcesWorkspace 
         }
-
-    - name: Cleanup on Failure
-      if: failure()
-      shell: ${{ inputs.shell }}
-      env:
-        _containername: pr${{  inputs.pullRequestNumber }}
-      run: |
-        if (Test-BcContainer $ENV:_containername) {
-          Remove-BCContainer -containerName $ENV:_containername
-        }
